@@ -9,11 +9,15 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Yuri Alexsander">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.jpg" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ asset('/images/logo.jpg') }}" type="image/x-icon">
   <meta name="description" content="">
   <meta name=theme-color content=#7fc771>
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="assets/all.css">
+  <link rel="stylesheet" href="{{ asset('source/fonts/fonts.css') }}">
+  <link rel="stylesheet" href="{{ asset('source/all.css') }}">
+   
+   
+  
+    
   
  
 
@@ -54,7 +58,7 @@
 
 </section>
 
- <section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow" id="header1-1" style="background-image: url(assets/images/imagem-elevador-2000x1000.jpg);">
+ <section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow" id="header1-1" style="background-image: url({{ asset('source/images/imagem-elevador-2000x1000.jpg') }});">
 
     
 
@@ -89,7 +93,8 @@
             </div>
              <div class="col-md-8 col-md-offset-2 text-xs-center">
                  
-                <img class="logo" src="assets/images/logo.jpg">
+                <img class="logo" src="{{ asset('source/images/logo.jpg') }}">
+                  
             </div>
         </div>
     </div>
@@ -116,7 +121,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/modernize-600x399.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="{{ asset('source/images/modernize-600x399.jpg') }}" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Modernização de Elevadores</h4>
                         
@@ -129,7 +134,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/elevac-600x399.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="{{ asset('source/images/elevac-600x399.jpg') }}" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Elevadores Residenciais</h4>
                         
@@ -142,7 +147,7 @@
         <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
-                    <div class="card-img"><img src="assets/images/manuteno-600x399.jpg" class="card-img-top"></div>
+                    <div class="card-img"><img src="{{ asset('source/images/manuteno-600x399.jpg') }}" class="card-img-top"></div>
                     <div class="card-block">
                         <h4 class="card-title">Manutenção de Elevadores</h4>
                         
@@ -172,7 +177,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/1-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/1-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -182,7 +187,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/2-2000x1336-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/2-2000x1336-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -192,7 +197,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/3-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/3-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -202,7 +207,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/4-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/4-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -212,7 +217,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/5-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/5-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -222,7 +227,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/6-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/6-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -232,7 +237,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/7-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/7-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -242,7 +247,7 @@
                             
                             
 
-                            <img alt="" src="assets/images/8-2000x1335-800x534.jpg">
+                            <img alt="" src="{{ asset('source/images/8-2000x1335-800x534.jpg') }}">
                             
                             <span class="icon-focus"></span>
                             
@@ -325,7 +330,7 @@
 
 
               <div class="mbr-table-cell mbr-left-padding-md-up mbr-valign-top col-md-7 image-size" style="width: 50%;">
-                  <div class="mbr-figure"><img src="assets/images/2-1400x1050.jpg"></div>
+                  <div class="mbr-figure"><img src="{{ asset('source/images/2-1400x1050.jpg') }}"></div>
               </div>
 
             </div>
@@ -359,8 +364,9 @@
 </footer>
 
 
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/all.js"></script>
+ 
+  <script src="{{ asset('source/web/assets/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('source/all.js') }}"></script>
    
   
   

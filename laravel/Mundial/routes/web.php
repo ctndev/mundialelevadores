@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/elevac200', function () {
+    return view('elevac');
+});
