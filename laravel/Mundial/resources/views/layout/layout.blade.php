@@ -2,27 +2,34 @@
 <html>
 <head>
   <!-- 
- 
+ Site desenvolvido por Yuri Alexsander
+https://www.facebook.com/yuri.alexs
 
 -->
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="author" content="Yuri Alexsander">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="{{ asset('/images/logo.jpg') }}" type="image/x-icon">
+  <link rel="shortcut icon" href="{{ asset('source/images/logo.jpg') }}" type="image/x-icon">
   <meta name="description" content="">
   <meta name=theme-color content=#7fc771>
   <link rel="stylesheet" href="{{ asset('source/fonts/fonts.css') }}">
   <link rel="stylesheet" href="{{ asset('source/all.css') }}">
-   
     
-
- 
+    
+    <title>@yield('title') Mundial Elevadores</title>
+   <meta property="og:url"                content="http://mundialelevadoresfortaleza.com.br/@yield('ogUrl')" />
+  <meta property="og:type"               content="website" />
+  <meta property="og:title"              content="@yield('ogTitle')" />
+  <meta property="og:description"        content="@yield('ogDescription')" />
+  <meta property="og:image"              content="{{ asset('source/images/') }}/@yield('ogImage')" />
+  <meta property="og:image:width"        content="1129" />
+  <meta property="og:image:height"       content="580" />
   
 </head>
 <body>
      
-    
+  
      
 
 <section id="menu-0">
@@ -45,7 +52,7 @@
                         <div class="hamburger-icon"></div>
                     </button>
 
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/#top">INICIO</a></li><li class="nav-item"><a class="nav-link link" href="/#msg-box3-0">SOBRE</a></li><li class="nav-item"><a class="nav-link link" href="/#header3-8">SERVIÇOS</a></li><li class="nav-item"><a class="nav-link link" href="#contacts2-3">CONTATO</a></li><li class="nav-item"><a class="nav-link link" href="/elevac200">ELEVAC 200</a></li></ul>
+                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="/">INICIO</a></li><li class="nav-item"><a class="nav-link link" href="/#msg-box3-0">SOBRE</a></li><li class="nav-item"><a class="nav-link link" href="/#header3-8">SERVIÇOS</a></li><li class="nav-item"><a class="nav-link link" href="#contacts2-3">CONTATO</a></li><li class="nav-item"><a class="nav-link link" href="/elevac200">ELEVAC 200</a></li></ul>
                     <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
                         <div class="close-icon"></div>
                     </button>
@@ -113,7 +120,7 @@
             <div class="mbr-footer-content col-xs-12 col-md-4">
             
             
-                  <div class="fb-page" data-href="https://www.facebook.com/macromixbr" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/macromixbr" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/macromixbr">Macromix Informática</a></blockquote></div>
+                  <div class="fb-page" data-href="https://www.facebook.com/mundialelevadores/" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/mundialelevadores/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/mundialelevadores/">Mundial Elevadores</a></blockquote></div>
              
 
             
@@ -128,7 +135,7 @@
 <footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-2" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
     
     <div class="container">
-        <p class="text-xs-center">Mundial Elevadores 2017<br>Desenvolvido por Yuri Alexsander</p>
+        <p class="text-xs-center">Mundial Elevadores {{date('Y')}} <br>Desenvolvido por <a href="https://www.facebook.com/yuri.alexs" target="_blank" class="text-danger">Yuri Alexsander</a></p>
     </div>
 </footer>
 
@@ -160,20 +167,21 @@
     
     
     
-    <script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.8";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+ 
 
   
   
   <input name="animation" type="hidden">
  
 
-
+  <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
     
     </body>

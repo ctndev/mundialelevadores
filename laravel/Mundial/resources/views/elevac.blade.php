@@ -1,6 +1,20 @@
 @extends('layout.layout')
 
 
+@section('title', 'Elevac 200 - ')
+
+@section('ogUrl', 'elevac200')
+@section('ogTitle', 'Elevac 200 - Mundial Elevadores Serviços Especializados')
+@section('ogDescription', 'Elevac 200 Elevador inteligente, panorâmico e muito charmoso, para novas construções e ideal para edificações já prontas.')
+@section('ogImage', 'ogimageelevac.jpg')
+
+
+
+
+
+
+
+
 @section('content')
 
 

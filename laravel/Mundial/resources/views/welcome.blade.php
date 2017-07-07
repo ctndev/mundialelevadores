@@ -1,6 +1,11 @@
 @extends('layout.layout')
  
+@section('title', '')
 
+@section('ogUrl', '')
+@section('ogTitle', 'Mundial Elevadores Serviços Especializados')
+@section('ogDescription', 'Mundial Elevadores serviços de montagem, manutenção e modernização de elevadores comerciais e residenciais.')
+@section('ogImage', 'ogimagehome.jpg')
 
 @section('content')
      
@@ -14,7 +19,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">Sobre Nós</h3>
-                <div class="lead"><p>Fundada em outubro de 1996, a Mundial Elevadores trabalha com montagem e manutenção de elevadores residenciais e comerciais, monta-cargas, plataformas, elevadores hidráulicos e a vácuo (<a href="page2.html" class="text-danger">Elevac 200</a>).</p><p><br></p><p><br></p></div>
+                <div class="lead"><p>Fundada em outubro de 1996, a Mundial Elevadores trabalha com montagem e manutenção de elevadores residenciais e comerciais, monta-cargas, plataformas, elevadores hidráulicos e a vácuo (<a href="/elevac200" class="text-danger">Elevac 200</a>).</p><p><br></p><p><br></p></div>
                 
             </div>
              <div class="col-md-8 col-md-offset-2 text-xs-center">
@@ -64,7 +69,7 @@
                     <div class="card-block">
                         <h4 class="card-title">Elevadores Residenciais</h4>
                         
-                        <p class="card-text">Tenha em sua casa, escritório, buffet, salão o mais lindo e seguro elevador do mercado, o <a href="page2.html" class="text-danger">Elevac 200</a>.</p>
+                        <p class="card-text">Tenha em sua casa, escritório, buffet, salão o mais lindo e seguro elevador do mercado, o <a href="/elevac200" class="text-danger">Elevac 200</a>.</p>
                         
                     </div>
                 </div>
@@ -248,7 +253,7 @@
 
                   </div>
 
-                  <div><a class="btn btn-danger" href="page2.html">LEIA MAIS</a></div>
+                  <div><a class="btn btn-danger" href="/elevac200">LEIA MAIS</a></div>
               </div>
 
 
