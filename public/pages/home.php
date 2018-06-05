@@ -1,81 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <!-- 
  
 
--->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="author" content="Yuri Alexsander">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/logo.jpg" type="image/x-icon">
-  <meta name="description" content="">
-  <meta name=theme-color content=#7fc771>
-  <link rel="stylesheet" href="assets/fonts/fonts.css">
-  <link rel="stylesheet" href="assets/all.css">
-  
- 
+<script>
+document.title = "<?php echo $siteName?>";
+</script>
 
- 
-  
-</head>
-<body>
-<section id="menu-0">
-
-    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
-        <div class="container">
-
-            <div class="mbr-table">
-                <div class="mbr-table-cell">
-
-                    <div class="navbar-brand">
-                        
-                        <a class="navbar-caption" href="#top">Mundial Elevadores</a>
-                    </div>
-
-                </div>
-                <div class="mbr-table-cell">
-
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
-
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="#top">INICIO</a></li><li class="nav-item"><a class="nav-link link" href="index.html#msg-box3-0">SOBRE</a></li><li class="nav-item"><a class="nav-link link" href="index.html#header3-8">SERVIÇOS</a></li><li class="nav-item"><a class="nav-link link" href="index.html#contacts2-3">CONTATO</a></li><li class="nav-item"><a class="nav-link link" href="page2.html">ELEVAC 200</a></li></ul>
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
-
-                </div>
-            </div>
-
-        </div>
-    </nav>
-
-</section>
-
- <section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow" id="header1-1" style="background-image: url(assets/images/imagem-elevador-2000x1000.jpg);">
-
-    
-
-    <div class="mbr-table-cell">
-
-        <div class="container">
-            <div class="row">
-                <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
-
-                    <h1 class="mbr-section-title display-1">Mundial Elevadores</h1>
-                    <p class="mbr-section-lead lead">Manutenção, Modernização, Montagem, Assistência Técnica e Vendas de Elevadores Residenciais e Monta-Cargas<br><br>(85) 3231-6180 | (85) 9.9991-0050<br></p>
-                    
-                </div>
-               
-            </div>
-        </div>
-    </div>
-
-    <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#msg-box3-0"><i class="mbr-arrow-icon"></i></a></div>
-
-</section>
 
 <section class="mbr-section article" id="msg-box3-0" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
 
@@ -84,7 +12,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2 text-xs-center">
                 <h3 class="mbr-section-title display-2">Sobre Nós</h3>
-                <div class="lead"><p>Fundada em outubro de 1996, a Mundial Elevadores trabalha com montagem e manutenção de elevadores residenciais e comerciais, monta-cargas, plataformas, elevadores hidráulicos e a vácuo (<a href="page2.html" class="text-danger">Elevac 200</a>).</p><p><br></p><p><br></p></div>
+                <div class="lead"><p>Fundada em outubro de 1996, a Mundial Elevadores trabalha com montagem e manutenção de elevadores residenciais e comerciais, monta-cargas, plataformas, elevadores hidráulicos e a vácuo (<a href="elevac200" class="text-danger">Elevac 200</a>).</p><p><br></p><p><br></p></div>
                 
             </div>
              <div class="col-md-8 col-md-offset-2 text-xs-center">
@@ -133,7 +61,7 @@
                     <div class="card-block">
                         <h4 class="card-title">Elevadores Residenciais</h4>
                         
-                        <p class="card-text">Tenha em sua casa, escritório, buffet, salão o mais lindo e seguro elevador do mercado, o <a href="page2.html" class="text-danger">Elevac 200</a>.</p>
+                        <p class="card-text">Tenha em sua casa, escritório, buffet, salão o mais lindo e seguro elevador do mercado, o <a href="elevac200" class="text-danger">Elevac 200</a>.</p>
                         
                     </div>
                 </div>
@@ -317,7 +245,7 @@
 
                   </div>
 
-                  <div><a class="btn btn-danger" href="page2.html">LEIA MAIS</a></div>
+                  <div><a class="btn btn-danger" href="elevac200">LEIA MAIS</a></div>
               </div>
 
 
@@ -333,38 +261,3 @@
     </div>
 
 </section>
-
-<section class="mbr-section mbr-section-md-padding mbr-footer footer2" id="contacts2-3" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
-    
-    <div class="container">
-        <div class="row">
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>Endereço</strong></span></font><br> Rua Dr. Pontes Neto nº 100<br>60813-600 Fortaleza - Ceará<br><br>
-<strong>Contato</strong><br>mundialelevadores@terra.com.br<br>
-(85)&nbsp;3231-6180<br>(85) 9.9991-0050<br><br></p>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3"></div>
-            <div class="col-xs-12 col-md-6">
-                <div class="mbr-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJf3vGWFhPxwcRQdRgYYj942w" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-2" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
-    
-    <div class="container">
-        <p class="text-xs-center">Mundial Elevadores 2017<br>Desenvolvido por Yuri Alexsander</p>
-    </div>
-</footer>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/all.js"></script>
-   
-  
-  
-  
-  <input name="animation" type="hidden">
-  </body>
-</html>

@@ -1,86 +1,11 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <!-- Site made with Mobirise Website Builder v3.12.1, https://mobirise.com -->
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v3.12.1, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/images/14225624-1256124237742597-8720599757685053500-n-165x128.jpg" type="image/x-icon">
-  <meta name="description" content="">
+ <script>
+document.title = "Elevac200 - <?php echo $siteName?>";
+</script>
+
+ 
+
   
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&amp;subset=latin">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat:400,700">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
-  <link rel="stylesheet" href="assets/bootstrap-material-design-font/css/material.css">
-  <link rel="stylesheet" href="assets/et-line-font-plugin/style.css">
-  <link rel="stylesheet" href="assets/tether/tether.min.css">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/dropdown/css/style.css">
-  <link rel="stylesheet" href="assets/animate.css/animate.min.css">
-  <link rel="stylesheet" href="assets/theme/css/style.css">
-  <link rel="stylesheet" href="assets/mobirise-gallery/style.css">
-  <link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css" type="text/css">
-  
-  
-  
-</head>
-<body>
-<section id="menu-g">
-
-    <nav class="navbar navbar-dropdown bg-color transparent navbar-fixed-top">
-        <div class="container">
-
-            <div class="mbr-table">
-                <div class="mbr-table-cell">
-
-                    <div class="navbar-brand">
-                        
-                        <a class="navbar-caption" href="#top">Mundial Elevadores</a>
-                    </div>
-
-                </div>
-                <div class="mbr-table-cell">
-
-                    <button class="navbar-toggler pull-xs-right hidden-md-up" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="hamburger-icon"></div>
-                    </button>
-
-                    <ul class="nav-dropdown collapse pull-xs-right nav navbar-nav navbar-toggleable-sm" id="exCollapsingNavbar"><li class="nav-item"><a class="nav-link link" href="#top">INICIO</a></li><li class="nav-item"><a class="nav-link link" href="index.html#msg-box3-0">SOBRE</a></li><li class="nav-item"><a class="nav-link link" href="index.html#header3-8">SERVIÇOS</a></li><li class="nav-item"><a class="nav-link link" href="index.html#contacts2-3">CONTATO</a></li><li class="nav-item"><a class="nav-link link" href="page2.html">ELEVAC 200</a></li></ul>
-                    <button hidden="" class="navbar-toggler navbar-close" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                        <div class="close-icon"></div>
-                    </button>
-
-                </div>
-            </div>
-
-        </div>
-    </nav>
-
-</section>
-
-<section class="engine"><a rel="external" href="https://mobirise.com">https://mobirise.com/</a></section><section class="mbr-section mbr-section-hero mbr-section-full mbr-parallax-background mbr-section-with-arrow mbr-after-navbar" id="header1-h" style="background-image: url(assets/images/imagem-elevador-2000x1000.jpg);">
-
     
-
-    <div class="mbr-table-cell">
-
-        <div class="container">
-            <div class="row">
-                <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
-
-                    <h1 class="mbr-section-title display-1">Mundial Elevadores</h1>
-                    <p class="mbr-section-lead lead">Manutenção, Modernização, Montagem, Assistência Técnica e Vendas de Elevadores Residenciais e Monta-Cargas<br><br>(85) 3231-6180 | (85) 9.9991-0050<br></p>
-                    
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="mbr-arrow mbr-arrow-floating" aria-hidden="true"><a href="#msg-box5-r"><i class="mbr-arrow-icon"></i></a></div>
-
-</section>
-
 <section class="mbr-section" id="msg-box5-r" style="background-color: rgb(255, 255, 255); padding-top: 80px; padding-bottom: 80px;">
 
     
@@ -358,48 +283,4 @@
         </div>
     </div>
 </section>
-
-<section class="mbr-section mbr-section-md-padding mbr-footer footer2" id="contacts2-m" style="background-color: rgb(46, 46, 46); padding-top: 90px; padding-bottom: 90px;">
-    
-    <div class="container">
-        <div class="row">
-            <div class="mbr-footer-content col-xs-12 col-md-3">
-                <p><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>Endereço</strong></span></font><br><br>Rua Dr. Pontes Neto nº 100<br>60813-600 Fortaleza - Ceará<br><br>
-<strong>Contato</strong><br>mundialelevadores@terra.com.br<br>
-(85)&nbsp;3231-6180<br>(85) 9.9991-0050<br><br></p>
-            </div>
-            <div class="mbr-footer-content col-xs-12 col-md-3"></div>
-            <div class="col-xs-12 col-md-6">
-                <div class="mbr-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0Dx_boXQiwvdz8sJHoYeZNVTdoWONYkU&amp;q=place_id:ChIJf3vGWFhPxwcRQdRgYYj942w" allowfullscreen=""></iframe></div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<footer class="mbr-small-footer mbr-section mbr-section-nopadding" id="footer1-n" style="background-color: rgb(50, 50, 50); padding-top: 1.75rem; padding-bottom: 1.75rem;">
-    
-    <div class="container">
-        <p class="text-xs-center">Mundial Elevadores 2017<br>Desenvolvido por Yuri Alexsander</p>
-    </div>
-</footer>
-
-
-  <script src="assets/web/assets/jquery/jquery.min.js"></script>
-  <script src="assets/tether/tether.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-  <script src="assets/smooth-scroll/smooth-scroll.js"></script>
-  <script src="assets/dropdown/js/script.min.js"></script>
-  <script src="assets/touch-swipe/jquery.touch-swipe.min.js"></script>
-  <script src="assets/viewport-checker/jquery.viewportchecker.js"></script>
-  <script src="assets/jarallax/jarallax.js"></script>
-  <script src="assets/masonry/masonry.pkgd.min.js"></script>
-  <script src="assets/imagesloaded/imagesloaded.pkgd.min.js"></script>
-  <script src="assets/bootstrap-carousel-swipe/bootstrap-carousel-swipe.js"></script>
-  <script src="assets/theme/js/script.js"></script>
-  <script src="assets/mobirise-gallery/player.min.js"></script>
-  <script src="assets/mobirise-gallery/script.js"></script>
-  
-  
-  <input name="animation" type="hidden">
-  </body>
-</html>
+ 
