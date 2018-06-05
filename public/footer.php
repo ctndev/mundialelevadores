@@ -39,6 +39,6 @@
   
   <input name="animation" type="hidden">
   
-  <?php echo "var: ".$tit->getTitle(); ?>
+ 
   </body>
 </html>

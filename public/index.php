@@ -25,8 +25,7 @@ if (isset($_GET['url'])) {
 if (file_exists('pages/'.$url.'.php')) {
     include('pages/'.$url.'.php');
 } else {
-    header('Location: '.$address.'');
-     
+    include('pages/404.php');
 }
 
  
