@@ -5,48 +5,51 @@ document.title = "<?php echo $siteName?>";
 </script>
 
 
-<section class="mbr-section article" id="msg-box3-0" style="background-color: rgb(255, 255, 255); padding-top: 120px; padding-bottom: 120px;">
+<section class="mbr-section article bg-claro" id="msg-box3-0">
 
     
     <div class="container">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 text-xs-center">
-                <h3 class="mbr-section-title display-2">Sobre Nós</h3>
-                <div class="lead"><p>Fundada em outubro de 1996, a Mundial Elevadores trabalha com montagem e manutenção de elevadores residenciais e comerciais, monta-cargas, plataformas, elevadores hidráulicos e a vácuo (<a href="elevac200" class="text-danger">Elevac 200</a>).</p><p><br></p><p><br></p></div>
-                
+            <div>
+                <h3 class="montserrat-about">Sobre Nós</h3>
+                <div style="display: flex;" class="about">
+                    <div class="about-content"><img src="assets/images/mef-logo-sm.png" style="width: -webkit-fill-available;"></div>
+                    <div class="about-content"><p style="" class="lead"><?=$about;?></p></div>
+                </div>
             </div>
+            
              <div class="col-md-8 col-md-offset-2 text-xs-center">
                  
-                <img class="logo" src="assets/images/logo.jpg">
+                
             </div>
         </div>
     </div>
 
 </section>
 
-<section class="mbr-section mbr-section__container article" id="header3-8" style="background-color: rgb(46, 46, 46); padding-top: 60px; padding-bottom: 60px;">
+<section class="mbr-section mbr-section__container article bg-verde" id="header3-8" style="background-color: rgb(46, 46, 46); padding-top: 60px; padding-bottom: 60px;">
     <div class="container">
         <div class="row">
             <div class="col-xs-12">
-                <h3 class="mbr-section-title display-2">Serviços</h3>
-                <small class="mbr-section-subtitle">Alguns dos nossos serviços</small>
+                <h3 class="mbr-section-title display-2 montserrat-about">Serviços</h3>
+                <small class="mbr-section-subtitle montserrat-title" style="font-style: italic">Alguns dos nossos serviços</small>
             </div>
         </div>
     </div>
 </section>
 
-<section class="mbr-cards mbr-section mbr-section-nopadding" id="features1-7" style="background-color: rgb(46, 46, 46);">
+<section class="mbr-cards mbr-section mbr-section-nopadding bg-verde" id="features1-7" style="background-color: rgb(46, 46, 46);">
 
         
 
     <div class="mbr-cards-row row striped">
 
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4 bg-claro" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img"><img src="assets/images/modernize-600x399.jpg" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">Modernização de Elevadores</h4>
+                        <h4 class="card-title montserrat-subtitle">Modernização de Elevadores</h4>
                         
                         <p class="card-text">Renove hoje seu elevador. Economia de energia e segurança são essenciais.</p>
                         
@@ -54,12 +57,12 @@ document.title = "<?php echo $siteName?>";
                 </div>
             </div>
         </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4 bg-verde" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img"><img src="assets/images/elevac-600x399.jpg" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">Elevadores Residenciais</h4>
+                        <h4 class="card-title montserrat-subtitle">Elevadores Residenciais</h4>
                         
                         <p class="card-text">Tenha em sua casa, escritório, buffet, salão o mais lindo e seguro elevador do mercado, o <a href="elevac200" class="text-danger">Elevac 200</a>.</p>
                         
@@ -67,12 +70,12 @@ document.title = "<?php echo $siteName?>";
                 </div>
             </div>
         </div>
-        <div class="mbr-cards-col col-xs-12 col-lg-4" style="padding-top: 80px; padding-bottom: 80px;">
+        <div class="mbr-cards-col col-xs-12 col-lg-4 bg-claro" style="padding-top: 80px; padding-bottom: 80px;">
             <div class="container">
                 <div class="card cart-block">
                     <div class="card-img"><img src="assets/images/manuteno-600x399.jpg" class="card-img-top"></div>
                     <div class="card-block">
-                        <h4 class="card-title">Manutenção de Elevadores</h4>
+                        <h4 class="card-title montserrat-subtitle">Manutenção de Elevadores</h4>
                         
                         <p class="card-text">Consertos, reparos e manutenções preventivas são essenciais para prolongar a vida util do equipamento.</p>
                         
@@ -86,7 +89,7 @@ document.title = "<?php echo $siteName?>";
     </div>
 </section>
 
-<section class="mbr-gallery mbr-section mbr-section-nopadding mbr-slider-carousel" id="gallery3-9" data-filter="false" style="background-color: rgb(255, 255, 255); padding-top: 1.5rem; padding-bottom: 1.5rem;">
+<section class="mbr-gallery mbr-section mbr-section-nopadding mbr-slider-carousel bg-claro" id="gallery3-9" data-filter="false">
     <!-- Filter -->
     
 
@@ -228,7 +231,7 @@ document.title = "<?php echo $siteName?>";
     </div>
 </section>
 
-<section class="mbr-section" id="msg-box7-q" style="background-color: rgb(30, 30, 30); padding-top: 80px; padding-bottom: 80px;">
+<section class="mbr-section bg-verde" id="msg-box7-q" style="background-color: rgb(30, 30, 30); padding-top: 80px; padding-bottom: 80px;">
 
     
     <div class="container">
@@ -238,7 +241,7 @@ document.title = "<?php echo $siteName?>";
               
 
               <div class="mbr-table-cell col-md-5 text-xs-center text-md-right content-size">
-                  <h3 class="mbr-section-title display-2">ELEVAC 200</h3>
+                  <h3 class="mbr-section-title display-2 montserrat-about text-end">ELEVAC 200</h3>
                   <div class="lead">
 
                     <p>Elevador inteligente, panorâmico e muito charmoso, para novas construções e ideal para edificações já prontas. O Elevac atende de 2 a 4 andares em casas, apartamentos duplex e tríplex, escritórios e outros ambientes.</p>
