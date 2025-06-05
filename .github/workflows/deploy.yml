@@ -22,4 +22,4 @@ jobs:
 
       - name: Rodar script de deploy na VPS
         run: |
-          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} 'bash ~/deploy_site_mundial.sh'
+          ssh ${{ secrets.VPS_USER }}@${{ secrets.VPS_HOST }} '/usr/bin/deploy_site_mundial.sh'
