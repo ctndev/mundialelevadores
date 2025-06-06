@@ -6,7 +6,7 @@
             <div class="mbr-footer-content col-xs-12 col-md-4">
                 <p><font color="#7c7c7c" face="Montserrat, sans-serif" size="3"><span style="letter-spacing: -1px; line-height: 20px;"><strong>Endereço</strong></span></font><br> Rua Coronel João Carneiro, 261 - Fátima<br>60040-560 Fortaleza - Ceará<br><br>
 <strong>Contato</strong><br>mundialelevadores.for@gmail.com<br>
-<?php echo $phone1?><br><?php echo $phone2?><br><br></p>
+<?php echo $phone1?><br><?php echo $phone2?><br><?php echo $phone3?><br><br></p>
             </div>
             <!-- <div class="mbr-footer-content col-xs-12 col-md-4">
             

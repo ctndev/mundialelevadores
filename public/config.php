@@ -5,6 +5,7 @@ $developer = "Yuri Caetano";
 $siteName = "Mundial Elevadores Fortaleza";
 $phone1 = "(85) 9.8802-8067";
 $phone2 = "(85) 9.9991-0050";
+$phone3 = "(85) 3231-6180";
 
 $about = "Há mais de 30 anos em Fortaleza, a Mundial Elevadores alia tradição e inovação para oferecer manutenção preventiva e corretiva, modernização e instalação de elevadores, plataformas de acessibilidade e sistemas a vácuo. Nosso maior diferencial é a confiança que conquistamos — de síndicos, administradoras e usuários finais — resultado de um atendimento transparente, próximo e comprometido com a segurança.
 

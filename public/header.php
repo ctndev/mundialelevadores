@@ -107,7 +107,7 @@
                     <div class="mbr-section col-md-10 col-md-offset-1 text-xs-center">
 
                         <h1 class="mbr-section-title display-1 montserrat-title"><?php echo $siteName ?></h1>
-                        <p class="mbr-section-lead lead montserrat-title">Manutenção, Modernização, Montagem, Assistência Técnica e Vendas de Elevadores Residenciais e Monta-Cargas<br><br><?php echo $phone1 ?> | <?php echo $phone2 ?><br></p>
+                        <p class="mbr-section-lead lead montserrat-title">Manutenção, Modernização, Montagem, Assistência Técnica e Vendas de Elevadores Residenciais e Monta-Cargas<br><br><?php echo $phone1 ?> | <?php echo $phone2 ?> | <?php echo $phone3 ?><br></p>
 
                     </div>
 
