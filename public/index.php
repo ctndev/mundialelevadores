@@ -1,48 +1,20 @@
-<?php 
- 
-include ('config.php');
-include('header.php');
+<?php
 
+use Illuminate\Foundation\Application;
+use Illuminate\Http\Request;
 
-$url = "";
+define('LARAVEL_START', microtime(true));
 
-$path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$path = trim($path, '/');
-$url = $path !== '' ? $path : 'home';
-
-// Sanitiza a variável para evitar inclusão de arquivos indesejados
-$url = basename($url);
-
-$caminhoPagina = "pages/{$url}.php";
-
-if (is_file($caminhoPagina)) {
-    include($caminhoPagina);
-} else {
-    include('pages/404.php');
+// Determine if the application is in maintenance mode...
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
 }
 
+// Register the Composer autoloader...
+require __DIR__.'/../vendor/autoload.php';
 
+// Bootstrap Laravel and handle the request...
+/** @var Application $app */
+$app = require_once __DIR__.'/../bootstrap/app.php';
 
- include('footer.php');
-
-/*
-if (file_exists($url.'.php')) {
-    echo 'existe';
-}
-
-
-
-
-
-*/
-
-
-
-
-
-
-
-
-?>
-
- 
+$app->handleRequest(Request::capture());
