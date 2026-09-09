@@ -150,7 +150,7 @@
         </ul>
       </div>
       <div class="split-text reveal">
-        <form class="form" id="contact-form" data-product="{{ $contact['form_product'] ?? $page->title }}" novalidate>
+        <form class="form" id="contact-form" method="post" action="{{ route('contacts.store') }}" data-product="{{ $contact['form_product'] ?? $page->title }}" novalidate>
           <h3>{{ $contact['form_title'] ?? 'Solicite um orçamento' }}</h3>
           <label>
             Nome
@@ -171,7 +171,7 @@
             </label>
           @endif
           <label>
-            Mensagem
+            Mensagem <span class="form-optional">(opcional)</span>
             <textarea name="mensagem" rows="4" placeholder="Conte sobre o seu imóvel"></textarea>
           </label>
           <button class="btn btn-primary" type="submit">{{ $contact['form_button'] ?? 'Enviar pelo WhatsApp' }}</button>

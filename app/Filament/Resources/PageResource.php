@@ -65,8 +65,8 @@ class PageResource extends Resource
                                 ->hidden(fn (Get $get): bool => in_array($get('template'), ['home', 'landing'], true)),
                         ])->columns(2),
                         Tab::make('SEO da página')->schema([
-                            TextInput::make('meta_title')->label('Meta title')->maxLength(70),
-                            Textarea::make('meta_description')->label('Meta description')->rows(3)->maxLength(180),
+                            self::withCharacterLimit(TextInput::make('meta_title')->label('Meta title'), 70),
+                            self::withCharacterLimit(Textarea::make('meta_description')->label('Meta description')->rows(3), 180),
                             TextInput::make('canonical')->label('Canonical (URL)'),
                             TextInput::make('og_title')->label('OG title'),
                             Textarea::make('og_description')->label('OG description')->rows(3),
@@ -77,6 +77,20 @@ class PageResource extends Resource
                         ...self::landingTabs(),
                     ]),
             ]);
+    }
+
+    /**
+     * Mostra o limite enquanto o texto é digitado e explica o erro em português,
+     * já que a aplicação não carrega as mensagens de validação traduzidas.
+     */
+    protected static function withCharacterLimit(TextInput|Textarea $field, int $limit): TextInput|Textarea
+    {
+        return $field
+            ->maxLength($limit)
+            ->live(onBlur: true)
+            ->hint(fn (?string $state): string => mb_strlen((string) $state)."/{$limit}")
+            ->hintColor(fn (?string $state): string => mb_strlen((string) $state) > $limit ? 'danger' : 'gray')
+            ->validationMessages(['max' => "Use no máximo {$limit} caracteres."]);
     }
 
     /**

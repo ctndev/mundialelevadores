@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>{{ $page->seoTitle() }}</title>
     @if ($page->seoDescription())
       <meta name="description" content="{{ $page->seoDescription() }}" />
@@ -50,6 +51,7 @@
     @yield('content')
 
     @include('partials.footer')
+    @include('partials.cookie-banner')
 
     <div class="lightbox" id="lightbox" hidden>
       <button class="lightbox-close" id="lightbox-close" aria-label="Fechar">&times;</button>

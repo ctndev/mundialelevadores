@@ -384,10 +384,7 @@
     box-shadow: var(--shadow);
     object-fit: cover;
   }
-  .credito {
-    margin-top: clamp(48px, 6vw, 80px);
-  }
-  
+
   .stats {
     display: flex;
     flex-wrap: wrap;
@@ -709,6 +706,10 @@
     color: var(--muted);
     margin: 0;
   }
+  .form-optional {
+    font-weight: 400;
+    color: var(--muted);
+  }
   
   /* Footer */
   .site-footer {
@@ -762,6 +763,40 @@
   }
   .whats-float:hover {
     transform: translateY(-3px);
+  }
+
+  .cookie-banner {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    z-index: 70;
+    max-width: 360px;
+    padding: 16px 18px;
+    background: var(--white);
+    color: var(--ink);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow), 0 0 0 1px rgba(0, 0, 0, 0.06);
+  }
+  .cookie-banner p {
+    margin: 0 0 12px;
+    font-size: 0.85rem;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .cookie-banner-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+  }
+  .cookie-banner-actions a {
+    font-size: 0.78rem;
+    color: var(--green);
+    text-underline-offset: 2px;
+  }
+  .cookie-banner .cookie-banner-accept {
+    padding: 0.5rem 1.1rem;
+    font-size: 0.82rem;
   }
   
   /* Reveal */
@@ -844,6 +879,12 @@
     .hero {
       min-height: auto;
       padding: 130px 0 70px;
+    }
+    .cookie-banner {
+      left: 12px;
+      right: 86px;
+      bottom: 16px;
+      max-width: none;
     }
   }
   

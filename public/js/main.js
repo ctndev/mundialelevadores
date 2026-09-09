@@ -89,6 +89,20 @@
     if (e.key === "Escape") closeLightbox();
   });
 
+  var COOKIE_KEY = "mef-cookie-consent";
+  var cookieBanner = document.getElementById("cookie-banner");
+  var cookieAccept = document.getElementById("cookie-banner-accept");
+
+  if (cookieBanner) {
+    if (window.localStorage.getItem(COOKIE_KEY) !== "1") cookieBanner.hidden = false;
+    if (cookieAccept) {
+      cookieAccept.addEventListener("click", function () {
+        window.localStorage.setItem(COOKIE_KEY, "1");
+        cookieBanner.hidden = true;
+      });
+    }
+  }
+
   var form = document.getElementById("contact-form");
   if (form) {
     form.addEventListener("submit", function (e) {
@@ -100,14 +114,50 @@
         alert("Por favor, informe seu nome e telefone.");
         return;
       }
+
       var product = (form.getAttribute("data-product") || "").trim();
-      var texto = "Olá! Meu nome é " + nome + ".\nTelefone: " + telefone;
-      var assunto = (data.get("assunto") || "").toString().trim();
-      var paradas = (data.get("paradas") || "").toString().trim();
-      if (assunto) texto += "\nAssunto: " + assunto;
-      if (paradas) texto += "\nInteresse: " + (product ? product + " (" + paradas + ")" : paradas);
-      texto += "\n" + ((data.get("mensagem") || "").toString().trim() || "Gostaria de um orçamento.");
-      window.open("https://api.whatsapp.com/send?phone=" + WHATS + "&text=" + encodeURIComponent(texto), "_blank");
+      var mensagem = (data.get("mensagem") || "").toString().trim();
+      data.set("nome", nome);
+      data.set("telefone", telefone);
+      data.set("mensagem", mensagem);
+      data.set("produto", product);
+      data.set("pagina", window.location.pathname || "/");
+
+      var csrf = document.querySelector('meta[name="csrf-token"]');
+      var submit = form.querySelector('[type="submit"]');
+      if (submit) submit.disabled = true;
+
+      fetch(form.action, {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "X-Requested-With": "XMLHttpRequest",
+          "X-CSRF-TOKEN": csrf ? csrf.getAttribute("content") : "",
+        },
+        body: data,
+      })
+        .then(function (response) {
+          if (!response.ok) {
+            throw new Error("Falha ao salvar o contato.");
+          }
+        })
+        .then(function () {
+          var texto = "Olá! Meu nome é " + nome + ".";
+          var paradas = (data.get("paradas") || "").toString().trim();
+          if (paradas) texto += "\nInteresse: " + (product ? product + " (" + paradas + ")" : paradas);
+          else if (product) texto += "\nInteresse: " + product;
+          if (mensagem) texto += "\n" + mensagem;
+          window.open(
+            "https://api.whatsapp.com/send?phone=" + WHATS + "&text=" + encodeURIComponent(texto),
+            "_blank"
+          );
+        })
+        .catch(function () {
+          alert("Não foi possível enviar o contato. Tente novamente.");
+        })
+        .finally(function () {
+          if (submit) submit.disabled = false;
+        });
     });
   }
 })();

@@ -173,14 +173,6 @@ class HomeContent
                     ['display' => '(85) 9.9991-0050', 'tel' => '+5585999910050'],
                     ['display' => '(85) 3231-6180', 'tel' => '+558532316180'],
                 ],
-                'subjects' => [
-                    ['label' => 'Manutenção de elevador'],
-                    ['label' => 'Modernização'],
-                    ['label' => 'Plataforma de acessibilidade'],
-                    ['label' => 'Elevador residencial / Elevac 200'],
-                    ['label' => 'Monta-cargas'],
-                    ['label' => 'Outro assunto'],
-                ],
             ],
         ];
     }

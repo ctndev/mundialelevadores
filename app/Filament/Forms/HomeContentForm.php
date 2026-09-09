@@ -8,7 +8,6 @@ use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Tabs\Tab;
 use Filament\Schemas\Components\Utilities\Set;
 
@@ -117,18 +116,20 @@ class HomeContentForm
                 Repeater::make('content.platforms.features')->label('Diferenciais')->schema([
                     TextInput::make('label')->required(),
                 ])->columnSpanFull(),
-                Section::make('Crédito acessibilidade')->schema([
-                    TextInput::make('content.credit.eyebrow'),
-                    TextInput::make('content.credit.title')->columnSpanFull(),
-                    ...self::imageField('content.credit.image'),
-                    TextInput::make('content.credit.image_alt')->label('Alt'),
-                    TextInput::make('content.credit.cta_label')->label('Botão'),
-                    TextInput::make('content.credit.cta_text')->label('Mensagem WhatsApp'),
-                    Repeater::make('content.credit.paragraphs')->label('Parágrafos')->schema([
-                        Textarea::make('text')->rows(3)->required(),
-                    ])->columnSpanFull(),
-                ])->columns(2)->columnSpanFull(),
             ]),
+
+            Tab::make('Crédito')->schema([
+                self::visibilityToggle('credit')->columnSpanFull(),
+                TextInput::make('content.credit.eyebrow')->label('Linha auxiliar'),
+                TextInput::make('content.credit.title')->label('Título')->columnSpanFull(),
+                ...self::imageField('content.credit.image'),
+                TextInput::make('content.credit.image_alt')->label('Alt da imagem'),
+                TextInput::make('content.credit.cta_label')->label('Botão'),
+                TextInput::make('content.credit.cta_text')->label('Mensagem WhatsApp'),
+                Repeater::make('content.credit.paragraphs')->label('Parágrafos')->schema([
+                    Textarea::make('text')->label('Texto')->rows(3)->required(),
+                ])->columnSpanFull(),
+            ])->columns(2),
 
             Tab::make('Elevac')->schema([
                 self::visibilityToggle('elevac')->columnSpanFull(),
@@ -199,9 +200,6 @@ class HomeContentForm
                     TextInput::make('display')->label('Exibição')->required(),
                     TextInput::make('tel')->label('Tel (ex: +5585...)')->required(),
                 ])->columns(2),
-                Repeater::make('content.contact.subjects')->label('Assuntos')->schema([
-                    TextInput::make('label')->required(),
-                ]),
             ])->columns(2),
         ];
     }

@@ -51,6 +51,7 @@ class PageSectionVisibilityTest extends TestCase
             'home sobre' => ['home', '/', 'about'],
             'home serviços' => ['home', '/', 'services'],
             'home plataformas' => ['home', '/', 'platforms'],
+            'home crédito' => ['home', '/', 'credit'],
             'home elevac' => ['home', '/', 'elevac'],
             'home marcas' => ['home', '/', 'brands'],
             'home fornecedores' => ['home', '/', 'suppliers'],

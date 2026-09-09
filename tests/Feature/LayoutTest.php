@@ -27,6 +27,7 @@ class LayoutTest extends TestCase
                 ->assertOk()
                 ->assertSee('id="main-nav"', false)
                 ->assertSee('class="site-footer"', false)
+                ->assertSee('id="cookie-banner"', false)
                 ->assertSee('Fortaleza · Ceará', false);
         }
     }

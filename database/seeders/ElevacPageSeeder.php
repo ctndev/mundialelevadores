@@ -17,7 +17,7 @@ class ElevacPageSeeder extends Seeder
                 'template' => 'landing',
                 'is_published' => true,
                 'content' => LandingContent::elevac(),
-                'meta_title' => 'Elevac 200 | Elevador Residencial Panorâmico — Mundial Elevadores Fortaleza',
+                'meta_title' => 'Elevac 200 | Elevador Residencial Panorâmico — Mundial Elevadores',
                 'meta_description' => 'Elevac 200: elevador residencial panorâmico para 2 a 4 andares, sem poço e sem casa de máquinas, instalado em 3 a 5 dias em Fortaleza e em todo o Ceará.',
                 'og_title' => 'Elevac 200 | Elevador Residencial Panorâmico',
                 'og_description' => 'Elevador inteligente, panorâmico e charmoso para casas, duplex, tríplex e escritórios. Instalação simplificada, sem obras de poço ou casa de máquinas.',

@@ -139,8 +139,14 @@
           </ul>
         </div>
       @endif
+    </div>
+  </section>
+  @endif
 
-      <div class="split split-reverse credito reveal">
+  @if ($credit['is_visible'] ?? true)
+  <section class="section" id="credito">
+    <div class="container">
+      <div class="split split-reverse reveal">
         <div class="split-media">
           @if (!empty($credit['image']))
             <img src="{{ media_url($credit['image']) }}" alt="{{ $credit['image_alt'] ?? '' }}" loading="lazy" />
@@ -295,7 +301,7 @@
       </div>
 
       <div class="split-text reveal">
-        <form class="form" id="contact-form" novalidate>
+        <form class="form" id="contact-form" method="post" action="{{ route('contacts.store') }}" novalidate>
           <h3>{{ $contact['form_title'] ?? 'Solicite um orçamento ou vistoria' }}</h3>
           <label>
             Nome
@@ -306,15 +312,7 @@
             <input type="tel" name="telefone" required placeholder="(85) 9....." />
           </label>
           <label>
-            Assunto
-            <select name="assunto">
-              @foreach ($contact['subjects'] ?? [] as $subject)
-                <option>{{ is_array($subject) ? ($subject['label'] ?? '') : $subject }}</option>
-              @endforeach
-            </select>
-          </label>
-          <label>
-            Mensagem
+            Mensagem <span class="form-optional">(opcional)</span>
             <textarea name="mensagem" rows="4" placeholder="Conte o que você precisa"></textarea>
           </label>
           <button class="btn btn-primary" type="submit">{{ $contact['form_button'] ?? 'Enviar pelo WhatsApp' }}</button>
