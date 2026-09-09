@@ -4,9 +4,12 @@ namespace Tests\Feature;
 
 use App\Filament\Resources\ContactResource;
 use App\Filament\Resources\ContactResource\Pages\ListContacts;
+use App\Mail\ContactFormMail;
 use App\Models\Contact;
+use App\Models\SiteSetting;
 use App\Models\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\Mail;
 use Livewire\Livewire;
 use Tests\TestCase;
 
@@ -80,5 +83,55 @@ class ContactFormTest extends TestCase
         Livewire::test(ListContacts::class)
             ->assertCanSeeTableRecords([$contact])
             ->assertTableActionExists('view');
+    }
+
+    public function test_contact_form_sends_one_email_per_recipient(): void
+    {
+        SiteSetting::setValue('contact_notification_emails', [
+            'atendimento@example.com',
+            'comercial@example.com',
+        ]);
+
+        Mail::fake();
+
+        $this->postJson('/contato', [
+            'nome' => 'Maria Silva',
+            'telefone' => '(85) 98802-8067',
+            'mensagem' => 'Quero um orçamento',
+            'pagina' => '/',
+        ])->assertOk();
+
+        Mail::assertSent(ContactFormMail::class, 2);
+        Mail::assertSent(ContactFormMail::class, fn (ContactFormMail $mail): bool => $mail->hasTo('atendimento@example.com'));
+        Mail::assertSent(ContactFormMail::class, fn (ContactFormMail $mail): bool => $mail->hasTo('comercial@example.com'));
+    }
+
+    public function test_contact_form_does_not_send_email_without_recipients(): void
+    {
+        Mail::fake();
+
+        $this->postJson('/contato', [
+            'nome' => 'Maria Silva',
+            'telefone' => '(85) 98802-8067',
+        ])->assertOk();
+
+        $this->assertSame(1, Contact::query()->count());
+        Mail::assertNothingSent();
+    }
+
+    public function test_admin_can_save_contact_notification_emails(): void
+    {
+        $this->seed();
+        $this->actingAs(User::query()->firstOrFail());
+
+        Livewire::test(ListContacts::class)
+            ->callAction('notificationEmails', [
+                'emails' => ['atendimento@example.com', 'comercial@example.com'],
+            ]);
+
+        $this->assertSame(
+            ['atendimento@example.com', 'comercial@example.com'],
+            SiteSetting::contactNotificationEmails(),
+        );
     }
 }

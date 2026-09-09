@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Jobs\SendContactFormMailJob;
 use App\Models\Contact;
+use App\Models\SiteSetting;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 
@@ -23,13 +25,17 @@ class ContactController extends Controller
 
         $message = trim((string) ($validated['mensagem'] ?? ''));
 
-        Contact::query()->create([
+        $contact = Contact::query()->create([
             'name' => trim($validated['nome']),
             'phone' => trim($validated['telefone']),
             'message' => $message !== '' ? $message : null,
             'product' => filled($validated['produto'] ?? null) ? trim((string) $validated['produto']) : null,
             'page' => filled($validated['pagina'] ?? null) ? trim((string) $validated['pagina']) : null,
         ]);
+
+        if (SiteSetting::contactNotificationEmails() !== []) {
+            SendContactFormMailJob::dispatch($contact);
+        }
 
         return response()->json(['ok' => true]);
     }

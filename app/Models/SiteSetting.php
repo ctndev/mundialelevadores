@@ -56,4 +56,22 @@ class SiteSetting extends Model
 
         return filter_var($value, FILTER_VALIDATE_BOOLEAN);
     }
+
+    /**
+     * @return list<string>
+     */
+    public static function contactNotificationEmails(): array
+    {
+        $emails = [];
+
+        foreach (setting_array('contact_notification_emails') as $email) {
+            $email = strtolower(trim((string) $email));
+
+            if ($email !== '' && filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                $emails[] = $email;
+            }
+        }
+
+        return $emails;
+    }
 }

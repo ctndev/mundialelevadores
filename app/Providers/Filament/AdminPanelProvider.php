@@ -2,6 +2,10 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\UserResource;
+use App\Http\Middleware\RecordUserLastAccess;
+use Filament\Actions\Action;
+use Filament\Auth\Pages\EditProfile;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -10,6 +14,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\Support\Icons\Heroicon;
 use Filament\Widgets\AccountWidget;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -27,6 +32,17 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('ctn-admin')
             ->login()
+            ->profile(EditProfile::class, isSimple: false)
+            ->userMenuItems([
+                'profile' => fn (Action $action): Action => $action
+                    ->label('Alterar senha')
+                    ->icon(Heroicon::OutlinedKey),
+                Action::make('users')
+                    ->label('Usuários')
+                    ->icon(Heroicon::OutlinedUsers)
+                    ->url(fn (): string => UserResource::getUrl())
+                    ->sort(10),
+            ])
             ->brandName('Mundial Elevadores')
             ->colors([
                 'primary' => Color::hex('#c0a375'),
@@ -53,6 +69,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
+                RecordUserLastAccess::class,
             ]);
     }
 }
