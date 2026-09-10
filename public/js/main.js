@@ -123,6 +123,19 @@
       data.set("produto", product);
       data.set("pagina", window.location.pathname || "/");
 
+      var texto = "Olá! Meu nome é " + nome + ".";
+      var paradas = (data.get("paradas") || "").toString().trim();
+      if (paradas) texto += "\nInteresse: " + (product ? product + " (" + paradas + ")" : paradas);
+      else if (product) texto += "\nInteresse: " + product;
+      if (mensagem) texto += "\n" + mensagem;
+
+      if (WHATS) {
+        window.open(
+          "https://api.whatsapp.com/send?phone=" + WHATS + "&text=" + encodeURIComponent(texto),
+          "_blank"
+        );
+      }
+
       var csrf = document.querySelector('meta[name="csrf-token"]');
       var submit = form.querySelector('[type="submit"]');
       if (submit) submit.disabled = true;
@@ -137,23 +150,15 @@
         body: data,
       })
         .then(function (response) {
+          if (response.status === 429) {
+            return;
+          }
           if (!response.ok) {
             throw new Error("Falha ao salvar o contato.");
           }
         })
-        .then(function () {
-          var texto = "Olá! Meu nome é " + nome + ".";
-          var paradas = (data.get("paradas") || "").toString().trim();
-          if (paradas) texto += "\nInteresse: " + (product ? product + " (" + paradas + ")" : paradas);
-          else if (product) texto += "\nInteresse: " + product;
-          if (mensagem) texto += "\n" + mensagem;
-          window.open(
-            "https://api.whatsapp.com/send?phone=" + WHATS + "&text=" + encodeURIComponent(texto),
-            "_blank"
-          );
-        })
         .catch(function () {
-          alert("Não foi possível enviar o contato. Tente novamente.");
+          alert("Não foi possível registrar o contato no site. Você já pode continuar pelo WhatsApp.");
         })
         .finally(function () {
           if (submit) submit.disabled = false;

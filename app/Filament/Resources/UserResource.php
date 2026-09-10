@@ -2,8 +2,10 @@
 
 namespace App\Filament\Resources;
 
+use App\Filament\Actions\ResetUserPasswordAction;
 use App\Filament\Resources\UserResource\Pages;
 use App\Models\User;
+use App\Support\AccessPassword;
 use BackedEnum;
 use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteAction;
@@ -45,15 +47,17 @@ class UserResource extends Resource
                     ->label('Senha')
                     ->password()
                     ->revealable()
-                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->visibleOn('edit')
+                    ->rule(AccessPassword::rule())
+                    ->showAllValidationMessages()
                     ->dehydrated(fn (?string $state): bool => filled($state))
                     ->confirmed()
-                    ->helperText(fn (string $operation): string => $operation === 'edit' ? 'Deixe em branco para manter a senha atual.' : ''),
+                    ->helperText('Deixe em branco para manter a senha atual. Para enviar uma senha temporária, use Resetar senha.'),
                 TextInput::make('password_confirmation')
                     ->label('Confirmar senha')
                     ->password()
                     ->revealable()
-                    ->required(fn (string $operation): bool => $operation === 'create')
+                    ->visibleOn('edit')
                     ->dehydrated(false),
             ]);
     }
@@ -73,6 +77,7 @@ class UserResource extends Resource
             ->defaultSort('last_access_at', 'desc')
             ->recordActions([
                 EditAction::make()->label('Editar'),
+                ResetUserPasswordAction::make(),
                 DeleteAction::make()
                     ->label('Excluir')
                     ->hidden(fn (User $record): bool => $record->is(Auth::user())),

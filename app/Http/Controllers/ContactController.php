@@ -7,6 +7,7 @@ use App\Models\Contact;
 use App\Models\SiteSetting;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\RateLimiter;
 
 class ContactController extends Controller
 {
@@ -23,18 +24,34 @@ class ContactController extends Controller
             'telefone.required' => 'Informe o telefone ou WhatsApp.',
         ]);
 
-        $message = trim((string) ($validated['mensagem'] ?? ''));
+        $sent = RateLimiter::attempt(
+            'contact-form:'.$request->ip(),
+            maxAttempts: 1,
+            callback: function () use ($validated): true {
+                $message = trim((string) ($validated['mensagem'] ?? ''));
 
-        $contact = Contact::query()->create([
-            'name' => trim($validated['nome']),
-            'phone' => trim($validated['telefone']),
-            'message' => $message !== '' ? $message : null,
-            'product' => filled($validated['produto'] ?? null) ? trim((string) $validated['produto']) : null,
-            'page' => filled($validated['pagina'] ?? null) ? trim((string) $validated['pagina']) : null,
-        ]);
+                $contact = Contact::query()->create([
+                    'name' => trim($validated['nome']),
+                    'phone' => trim($validated['telefone']),
+                    'message' => $message !== '' ? $message : null,
+                    'product' => filled($validated['produto'] ?? null) ? trim((string) $validated['produto']) : null,
+                    'page' => filled($validated['pagina'] ?? null) ? trim((string) $validated['pagina']) : null,
+                ]);
 
-        if (SiteSetting::contactNotificationEmails() !== []) {
-            SendContactFormMailJob::dispatch($contact);
+                if (SiteSetting::contactNotificationEmails() !== []) {
+                    SendContactFormMailJob::dispatch($contact);
+                }
+
+                return true;
+            },
+            decaySeconds: 60,
+        );
+
+        if ($sent === false) {
+            return response()->json([
+                'ok' => false,
+                'message' => 'Aguarde um minuto para enviar outro contato.',
+            ], 429);
         }
 
         return response()->json(['ok' => true]);

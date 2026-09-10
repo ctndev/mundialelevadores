@@ -2,6 +2,7 @@
 
 namespace App\Filament\Resources\UserResource\Pages;
 
+use App\Filament\Actions\ResetUserPasswordAction;
 use App\Filament\Resources\UserResource;
 use App\Models\User;
 use Filament\Actions\DeleteAction;
@@ -20,6 +21,7 @@ class EditUser extends EditRecord
     protected function getHeaderActions(): array
     {
         return [
+            ResetUserPasswordAction::make(),
             DeleteAction::make()
                 ->label('Excluir')
                 ->hidden(fn (User $record): bool => $record->is(Auth::user())),

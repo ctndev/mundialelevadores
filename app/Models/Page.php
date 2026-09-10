@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Support\SiteCache;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
@@ -78,6 +79,13 @@ class Page extends Model
     {
         static::saving(function (Page $page): void {
             $page->slug = Str::slug($page->slug);
+        });
+
+        static::saved(function (): void {
+            SiteCache::flush();
+        });
+        static::deleted(function (): void {
+            SiteCache::flush();
         });
     }
 }

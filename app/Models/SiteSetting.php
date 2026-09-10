@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
+use App\Support\SiteCache;
 use Illuminate\Database\Eloquent\Attributes\Fillable;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Cache;
 
 #[Fillable(['key', 'value'])]
 class SiteSetting extends Model
@@ -21,7 +21,7 @@ class SiteSetting extends Model
      */
     public static function allCached(): array
     {
-        return Cache::rememberForever('site_settings', function () {
+        return SiteCache::remember('settings', function () {
             return static::query()->pluck('value', 'key')->all();
         });
     }
@@ -32,8 +32,6 @@ class SiteSetting extends Model
             ['key' => $key],
             ['value' => is_bool($value) ? ($value ? '1' : '0') : (is_array($value) ? json_encode($value) : $value)],
         );
-
-        Cache::forget('site_settings');
     }
 
     /**
@@ -73,5 +71,15 @@ class SiteSetting extends Model
         }
 
         return $emails;
+    }
+
+    protected static function booted(): void
+    {
+        static::saved(function (): void {
+            SiteCache::flush();
+        });
+        static::deleted(function (): void {
+            SiteCache::flush();
+        });
     }
 }
